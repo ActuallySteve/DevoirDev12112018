@@ -33,12 +33,13 @@ class Ctrl_Login extends CI_Controller
                     $this->session->set_userdata('infoLog', $session_id);
                 }
                 $this->load->model('model_Region');
-                $data['lesRegions']= $this->model_Region->getAllRegions();
+                $data['lesRegions']= $this->model_Region->getAllRegion();
+                $this->load->view('view_Accueil', $data);
             }
             }
             else {
                 echo "<div class='sErrorLog'>Veuillez écrire un nom valide</div>";
-                $this->load->view('view_Accueil');
+                
                 }
         }
 

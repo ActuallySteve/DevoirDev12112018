@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="JS/mesFonctions.js"></script>
+    <script src="JQuery/jquery-3.1.1.js"></script> 
+    <script>
+        $
+        (
+            function()
+            {
+                $('input[name=idRegion]').click
+                (
+                    function()
+                    {
+                        AfficherLesVilles($(this).val());
+                    }
+                )
+            }
+        );
+
+    </script>
 </head>
 <body>
 <?php
-// $this->load->library('session');
-// $infoUser = $this->session->userdata('infoLog');
-// ?>
-<form method="POST" action="<?php echo base_url(); ?>index.php/Ctrl_Accueil/seConnecter/">
-    <label>Votre nom</label><br>
-    <input type="text" name="leNom"><br><br>
-    <input type="submit" name="btnConnection" value="Connection">
-</form>
+$this->load->library('session');
+$infoUser = $this->session->userdata('infoLog');
+?>
 <?php
 foreach ($lesRegions as $uneRegion)
 {
@@ -23,7 +36,7 @@ foreach ($lesRegions as $uneRegion)
 <input type='radio' value='<?php echo $uneRegion->idRegion?>' name='idRegion'><?php echo $uneRegion->nomRegion ?> <?php echo $uneRegion->scoreRegion ?><br> 
 <?php
 }
-
 ?>
+<div id="divVilles"></div>
 </body>
 </html>
