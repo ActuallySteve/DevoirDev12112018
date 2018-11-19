@@ -36,11 +36,15 @@ class Ctrl_Login extends CI_Controller
                 $data['lesRegions']= $this->model_Region->getAllRegion();
                 $this->load->view('view_Accueil', $data);
             }
+            else
+            {
+                echo "Veuillez écrire un nom valide";    
             }
-            else {
-                echo "<div class='sErrorLog'>Veuillez écrire un nom valide</div>";
-                
-                }
+            }
+            else 
+            {
+                echo "Veuillez écrire un nom"; 
+            }
         }
 
     }
